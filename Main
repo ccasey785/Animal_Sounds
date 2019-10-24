@@ -1,0 +1,68 @@
+ //animal_communication 
+  //Christopher Casey
+  //August 13, 2018
+  //This program will display the sounds of animals in derived classes from a base class. It utilizes the base class to inherit the properties
+  //for the derived classes, constructors, destructors and functions to achieve this.
+  #include <iostream>
+  using namespace std;
+
+  // Animal is a base class.
+  class Animal
+  {
+  public:
+      // Constructor
+      Animal()
+          { cout << ""; }
+
+      // Destructor
+      virtual ~Animal()
+          { cout << ""; }
+          void communicate() 
+          {cout << "Speak." << endl;}
+  };
+
+  // The Dog class is derived from Animal
+  class Dog : public Animal
+  {
+  public:
+      // Constructor
+      Dog() : Animal()
+          { cout << ""; }
+
+      // Destructor
+      ~Dog()
+          { cout << ""; }
+          void communicate() {cout << "Woof!" << endl;}
+  };
+class Cat : public Animal
+{
+    public:
+    //Constructor
+    Cat() : Animal()
+    {cout<<""; }
+    
+    //Destructor
+    ~Cat()
+    {cout<<""; }
+    void communicate() {cout << "Meow!" << endl;}
+};
+
+  int main()
+  {
+      // Create a Dog object, referenced by an
+      // Animal pointer.
+      Animal *myAnimal = new Dog;
+      Animal *myAnimal2 = new Cat;
+
+      // Delete the dog object.
+      delete myAnimal;
+      delete myAnimal2;
+    //Function call for output
+    Animal genericAnimal;
+    genericAnimal.communicate();
+    Dog ralph;
+    ralph.communicate();
+    Cat fluffy;
+    fluffy.communicate();
+      return 0;
+}
